@@ -8,7 +8,6 @@ read -p "Enter REGION: " REGION
 ID="$(gcloud projects list --format='value(PROJECT_ID)')"
 
 cat > GenerateImage.py <<EOF_END
-
 import argparse
 
 import vertexai
@@ -35,8 +34,9 @@ def generate_image(
         seed=1,
         add_watermark=False,
     )
-    
+
     images[0].save(location=output_file)
+
     return images
 
 generate_image(
