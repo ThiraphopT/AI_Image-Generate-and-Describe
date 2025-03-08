@@ -10,7 +10,8 @@ ID="$(gcloud projects list --format='value(PROJECT_ID)')"
 cat > GenerateImage.py <<EOF_END
 
 import argparse
-import vertexai from vertexai.preview.vision_models import ImageGenerationModel
+import vertexai
+from vertexai.preview.vision_models import ImageGenerationModel
 
 def generate_image(
     project_id: str, location: str, output_file: str, prompt: str
